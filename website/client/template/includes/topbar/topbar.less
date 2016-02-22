@@ -1,0 +1,39 @@
+.topbar {
+    position: fixed;
+    z-index: 20;
+    background: #25272B;
+    width: auto;
+    height: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 10%;
+    .topbar__logo {
+        display: inline-block;
+        margin-top: 5px;
+        font-size: 30px;
+        color: #fff;
+    }
+    .topbar__nav {
+        display: inline-block;
+        vertical-align: 7px;
+        margin-left: 30px;
+        .topbar__nav--item {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 500;
+            font-family: Roboto;
+            padding: 16px;
+            color: #ddd;
+            transition: .5s;
+            -moz-transition: .5s;
+            -o-transition: .5s;
+            -htm-transition: .5s;
+            -webkit-transition: .5s;
+            &:hover {
+                background: #1B1B1B;
+                color: #fff;
+            }
+        }
+    }
+}
