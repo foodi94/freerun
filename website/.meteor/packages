@@ -18,6 +18,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 iron:router
 
+email
 less
 mizzao:jquery-ui
 johnantoni:meteor-normalize
