@@ -1,19 +1,40 @@
-Template.contact.events({
-    'submit .contact--form' (event, template) {
-        let     nom,
-                mail,
-                objet,
-                msg;
+Template.contact.onRendered(function(){
+    $('.contact--form').validate({
+        messages: {
+            email: {
+                required: '',
+                email: ''
+            },
+            nom: {
+                required: ''
+            },
+            msg: {
+                required: ''
+            }
+        },
+        submitHandler: function(event){
+            var email = $('[name=email]').val();
+            var nom = $('[name=nom]').val();
+            var msg = $('[name=msg]').val();
 
-        nom     = template.find('#nom').value;
-        mail    = template.find('#mail').value;
-        objet   = template.find('#objet').value;
-        msg     = template.find('#msg').value;
+            Meteor.call('sendEmail',
+                        'justhype@outlook.fr',
+                        nom + '<' + email + '>',
+                        'Message de ' + nom + " via Contact",
+                        msg,
+                        function (error){
+                if (error) {
+                    Bert.alert('Vérifier que tous les champs soient remplis',
+                               'danger',
+                               'growl-top-right');
+                } else {
+                    Bert.alert('Envoyé avec succès',
+                               'success',
+                               'growl-top-right');
+                }
+            });
 
-        Meteor.call('sendEmail',
-            'justhype@outlook.fr',
-            mail,
-            objet,
-            nom + '\n' + msg);
-    }
+            $('.contact--form')[0].reset();
+        }
+    });
 });

@@ -5,6 +5,9 @@
     background: #fff;
     text-align: center;
     .contact--form {
+        input.error, textarea.error {
+            background: #FFE7E7;
+        }
         input, textarea{
             outline: none;
             border: none;
@@ -23,9 +26,6 @@
             width: 500px;
             height: 300px;
             margin-left: 3px;
-        }
-        input:hover, textarea:hover, input:focus, textarea:focus{
-            background: lighten(#ddd, 6%);
         }
         input[type=submit]{
           background: #2980b9;
