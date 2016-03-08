@@ -18,9 +18,12 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 iron:router
 
+email
 less
 mizzao:jquery-ui
 johnantoni:meteor-normalize
 themeteorchef:bert
 momentjs:moment
 pagebakers:ionicons
+check
+themeteorchef:jquery-validation
